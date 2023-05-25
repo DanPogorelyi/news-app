@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import {AppRouter} from "app/providers/Router";
 import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/libs";
@@ -12,12 +14,14 @@ export const App = () => {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Navbar />
+            <Suspense fallback={<div>Loading translate...</div>}>
+                <Navbar />
 
-            <div className="content-page">
-                <Sidebar />
-                <AppRouter />
-            </div>
+                <div className="content-page">
+                    <Sidebar />
+                    <AppRouter />
+                </div>
+            </Suspense>
         </div>
     );
 };

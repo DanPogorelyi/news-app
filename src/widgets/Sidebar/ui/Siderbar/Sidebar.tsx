@@ -3,6 +3,7 @@ import {classNames} from "shared/libs";
 
 import cls from './Sidebar.module.scss';
 import {ThemeSwitcher} from "shared/ui/ThemeSwitcher";
+import {LangSwitcher} from "shared/ui/LangSwitcher";
 
 type Props = {
     className?: string;
@@ -21,6 +22,7 @@ export const Sidebar = ({className}: Props) => {
 
             <div className={cls.switchers}>
                 <ThemeSwitcher />
+                <LangSwitcher />
             </div>
         </div>
     );
