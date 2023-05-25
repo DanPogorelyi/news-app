@@ -1,4 +1,4 @@
-import {createContext, Dispatch, SetStateAction} from "react";
+import { createContext, Dispatch, SetStateAction } from 'react';
 
 export const LOCAL_STORAGE_THEME_KEY = 'theme';
 
@@ -7,9 +7,9 @@ export const enum Theme {
     DARK = 'dark'
 }
 
-export interface ThemeContext {
+export type ThemeContextType = {
     theme?: Theme;
     setTheme?: Dispatch<SetStateAction<Theme>>;
 }
 
-export const ThemeContext = createContext<ThemeContext>({});
+export const ThemeContext = createContext<ThemeContextType>({});

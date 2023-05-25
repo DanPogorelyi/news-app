@@ -1,16 +1,16 @@
-import { Suspense } from "react";
+import React, { Suspense } from 'react';
 
-import {AppRouter} from "app/providers/Router";
-import {useTheme} from "app/providers/ThemeProvider";
-import {classNames} from "shared/libs";
+import { AppRouter } from 'app/providers/Router';
+import { useTheme } from 'app/providers/ThemeProvider';
+import { classNames } from 'shared/libs';
 
-import {Navbar} from "widgets/Navbar";
-import {Sidebar} from "widgets/Sidebar";
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
 
 import './styles/index.scss';
 
 export const App = () => {
-    const {theme} = useTheme();
+    const { theme } = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
