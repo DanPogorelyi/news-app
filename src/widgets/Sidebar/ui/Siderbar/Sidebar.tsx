@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { classNames } from 'shared/libs';
 
+import { classNames } from 'shared/libs';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { Button } from 'shared/ui/Button';
+
 import cls from './Sidebar.module.scss';
 
 type Props = {
@@ -19,7 +20,7 @@ export const Sidebar = ({ className }: Props) => {
 
     return (
         <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
-            <Button onClick={handleToggle}>toggle sidebar</Button>
+            <Button onClick={handleToggle}>Toggle sidebar</Button>
 
             <div className={cls.switchers}>
                 <ThemeSwitcher />
