@@ -43,7 +43,7 @@ module.exports = {
         'no-underscore-dangle': 'off',
         '@typescript-eslint/no-unused-vars': ['warn'],
         'max-len': ['error',
-            { ignoreComments: true, ignoreTrailingComments: true },
+            { code: 100, ignoreComments: true, ignoreTrailingComments: true },
         ],
     },
     globals: {
