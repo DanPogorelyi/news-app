@@ -1,5 +1,7 @@
 {
   "GREETING": "Hello bitch",
   "LANGUAGE": "English",
-  "PAGE_NOT_FOUND": "Page not found"
+  "PAGE_NOT_FOUND": "Page not found",
+  "PAGE_ERROR": "Something went wrong.",
+  "RELOAD_PAGE": "Reload Page"
 }
