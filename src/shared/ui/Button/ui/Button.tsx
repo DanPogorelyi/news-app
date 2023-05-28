@@ -4,7 +4,8 @@ import { classNames } from 'shared/libs';
 import cls from './Button.module.scss';
 
 export const enum ThemeButton {
-    CLEAR = 'clear'
+    CLEAR = 'clear',
+    OUTLINE = 'outline'
 }
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {

@@ -11,7 +11,9 @@
     "lint:eslint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-    "unit": "jest --config ./config/jest/jest.config.ts"
+    "unit": "jest --config ./config/jest/jest.config.ts",
+    "storybook": "start-storybook -p 6006 -c ./config/storybook",
+    "build-storybook": "build-storybook -c ./config/storybook"
   },
   "repository": {
     "type": "git",
@@ -40,6 +42,14 @@
     "@types/webpack-bundle-analyzer": "4.4.1",
     "@typescript-eslint/eslint-plugin": "5.12.1",
     "@typescript-eslint/parser": "5.12.1",
+    "@storybook/addon-actions": "6.4.19",
+    "@storybook/addon-essentials": "6.4.19",
+    "@storybook/addon-interactions": "6.4.19",
+    "@storybook/addon-links": "6.4.19",
+    "@storybook/builder-webpack5": "6.4.19",
+    "@storybook/manager-webpack5": "6.4.19",
+    "@storybook/react": "6.4.19",
+    "@storybook/testing-library": "0.0.9",
     "babel-loader": "8.2.3",
     "css-loader": "6.6.0",
     "eslint": "8.10.0",

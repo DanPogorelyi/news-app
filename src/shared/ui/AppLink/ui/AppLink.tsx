@@ -6,7 +6,8 @@ import cls from './AppLink.module.scss';
 
 export const enum AppLinkTheme {
     PRIMARY = 'primary',
-    INVERTED = 'inverted'
+    INVERTED = 'inverted',
+    RED = 'red'
 }
 
 type Props = LinkProps & {
