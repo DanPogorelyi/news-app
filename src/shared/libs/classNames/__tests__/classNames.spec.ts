@@ -1,4 +1,4 @@
-import { classNames } from '../classNames';
+import { classNames } from 'shared/libs';
 
 describe('classNames', () => {
     it('with only first param', () => {
