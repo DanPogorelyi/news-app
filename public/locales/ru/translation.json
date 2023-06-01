@@ -1,8 +1,8 @@
 {
   "GREETING": "Здравствуй сучка",
   "LANGUAGE": "Русский",
+  "SHORT_LANGUAGE": "Ру",
   "PAGE_NOT_FOUND": "Страница не найдена",
   "PAGE_ERROR": "Что-то пошло не так.",
-  "RELOAD_PAGE": "Обновить страницу",
-  "TOGGLE": "Переключить"
+  "RELOAD_PAGE": "Обновить страницу"
 }

@@ -41,7 +41,7 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'warn',
         'no-underscore-dangle': 'off',
-        '@typescript-eslint/no-unused-vars': ['warn'],
+        '@typescript-eslint/no-unused-vars': ['error'],
         'max-len': ['error',
             { code: 100, ignoreComments: true, ignoreTrailingComments: true },
         ],

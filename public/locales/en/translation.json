@@ -1,8 +1,8 @@
 {
   "GREETING": "Hello bitch",
   "LANGUAGE": "English",
+  "SHORT_LANGUAGE": "En",
   "PAGE_NOT_FOUND": "Page not found",
   "PAGE_ERROR": "Something went wrong.",
-  "RELOAD_PAGE": "Reload Page",
-  "TOGGLE": "Toggle"
+  "RELOAD_PAGE": "Reload Page"
 }
