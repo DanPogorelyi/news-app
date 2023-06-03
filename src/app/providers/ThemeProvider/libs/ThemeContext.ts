@@ -3,8 +3,8 @@ import { createContext, Dispatch, SetStateAction } from 'react';
 export const LOCAL_STORAGE_THEME_KEY = 'theme';
 
 export const enum Theme {
-    LIGHT = 'light',
-    DARK = 'dark'
+    LIGHT = 'app_light_theme',
+    DARK = 'app_dark_theme'
 }
 
 export type ThemeContextType = {

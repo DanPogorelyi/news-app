@@ -1,8 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
 import { Modal } from 'shared/ui/Modal';
 
 export default {
@@ -20,10 +18,3 @@ Primary.args = {
     isOpen: true,
     children: 'Lorem ipsum dolor sit amet',
 };
-
-export const Dark = Template.bind({});
-Dark.args = {
-    isOpen: true,
-    children: 'Lorem ipsum dolor sit amet',
-};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -4,7 +4,7 @@ import {
 
 import { classNames } from 'shared/libs';
 import { Portal } from 'shared/ui/Portal';
-import { useTheme } from 'app/providers/ThemeProvider';
+
 import cls from './Modal.module.scss';
 
 type Props = {
@@ -17,8 +17,6 @@ type Props = {
 export const Modal = ({
     className, children, isOpen, onClose,
 }: Props) => {
-    const { theme } = useTheme();
-
     const handleKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
             onClose?.();
@@ -45,7 +43,6 @@ export const Modal = ({
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
-        [cls[theme]]: true,
     };
 
     return (
