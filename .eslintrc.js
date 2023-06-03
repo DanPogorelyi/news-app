@@ -8,6 +8,7 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:i18next/recommended',
+        'plugin:react-hooks/recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -45,6 +46,8 @@ module.exports = {
         'max-len': ['error',
             { code: 100, ignoreComments: true, ignoreTrailingComments: true },
         ],
+        'jsx-a11y/no-static-element-interactions': 'off', // TODO: fix
+        'jsx-a11y/click-events-have-key-events': 'off', // TODO: fix
     },
     globals: {
         __IS_DEV__: true,
