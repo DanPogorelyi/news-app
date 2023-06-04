@@ -48,6 +48,7 @@ module.exports = {
         ],
         'jsx-a11y/no-static-element-interactions': 'off', // TODO: fix
         'jsx-a11y/click-events-have-key-events': 'off', // TODO: fix
+        'no-param-reassign': 'off', // TODO: for redux toolkit, fix
     },
     globals: {
         __IS_DEV__: true,
