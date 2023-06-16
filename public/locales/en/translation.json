@@ -4,5 +4,8 @@
   "SHORT_LANGUAGE": "En",
   "PAGE_NOT_FOUND": "Page not found",
   "PAGE_ERROR": "Something went wrong.",
-  "RELOAD_PAGE": "Reload Page"
+  "RELOAD_PAGE": "Reload Page",
+  "LOGIN": "Log in",
+  "ENTER_NAME": "Enter Name",
+  "ENTER_PASSWORD": "Enter Password"
 }

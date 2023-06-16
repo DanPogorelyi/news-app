@@ -4,5 +4,8 @@
   "SHORT_LANGUAGE": "Ру",
   "PAGE_NOT_FOUND": "Страница не найдена",
   "PAGE_ERROR": "Что-то пошло не так.",
-  "RELOAD_PAGE": "Обновить страницу"
+  "RELOAD_PAGE": "Обновить страницу",
+  "LOGIN": "Войти",
+  "ENTER_NAME": "Введите имя",
+  "ENTER_PASSWORD": "Введите пароль"
 }

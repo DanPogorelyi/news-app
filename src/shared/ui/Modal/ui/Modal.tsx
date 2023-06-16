@@ -1,5 +1,5 @@
 import {
-    MouseEvent, ReactNode, useCallback, useEffect,
+    MouseEvent, ReactNode, useCallback, useEffect, useState,
 } from 'react';
 
 import { classNames } from 'shared/libs';
@@ -10,18 +10,31 @@ import cls from './Modal.module.scss';
 type Props = {
     className?: string;
     children?: ReactNode;
+    lazy?: boolean;
     isOpen?: boolean; // required?
     onClose?: () => void; // required?
 }
 
 export const Modal = ({
-    className, children, isOpen, onClose,
+    className,
+    children,
+    isOpen,
+    lazy,
+    onClose,
 }: Props) => {
+    const [isMounted, setIsMounted] = useState(false);
+
     const handleKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
             onClose?.();
         }
     }, [onClose]);
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
 
     useEffect(() => {
         if (isOpen) {
@@ -44,6 +57,10 @@ export const Modal = ({
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
     };
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>
