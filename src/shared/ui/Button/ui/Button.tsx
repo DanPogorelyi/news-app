@@ -22,6 +22,7 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
     theme?: ButtonTheme;
     square?: boolean;
     size?: ButtonSize;
+    disabled?: boolean;
 }
 
 export const Button: FC<Props> = ({
@@ -29,6 +30,7 @@ export const Button: FC<Props> = ({
     className,
     theme,
     square,
+    disabled,
     size = ButtonSize.M,
     ...otherProps
 }) => {
@@ -36,11 +38,13 @@ export const Button: FC<Props> = ({
         [cls[theme]]: true,
         [cls.square]: square,
         [cls[size]]: true,
+        [cls.disabled]: disabled,
     };
 
     return (
         <button
             type="button"
+            disabled={disabled}
             className={classNames(cls.Button, mods, [className, cls[theme]])}
             {...otherProps}
         >

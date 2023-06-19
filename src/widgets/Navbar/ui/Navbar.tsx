@@ -4,6 +4,8 @@ import { classNames } from 'shared/libs';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserAuthData, userActions } from 'entities/User';
 import cls from './Navbar.module.scss';
 
 type Props = {
@@ -12,6 +14,8 @@ type Props = {
 
 export const Navbar = ({ className }: Props) => {
     const { t } = useTranslation();
+    const authData = useSelector(getUserAuthData);
+    const dispatch = useDispatch();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -22,6 +26,23 @@ export const Navbar = ({ className }: Props) => {
     const handleCloseModal = () => {
         setIsModalOpen(false);
     };
+
+    const handleLogout = () => {
+        dispatch(userActions.logout());
+    };
+
+    if (authData) {
+        return (
+            <div className={classNames(cls.Navbar, {}, [className])}>
+                <Button
+                    theme={ButtonTheme.CLEAR_INVERTED}
+                    onClick={handleLogout}
+                >
+                    {t('LOGOUT')}
+                </Button>
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>

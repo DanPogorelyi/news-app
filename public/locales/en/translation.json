@@ -6,6 +6,9 @@
   "PAGE_ERROR": "Something went wrong.",
   "RELOAD_PAGE": "Reload Page",
   "LOGIN": "Log in",
+  "LOGOUT": "Log out",
+  "LOGIN_FORM": "Login Form",
+  "LOGIN_ERROR": "You have entered an invalid username or password",
   "ENTER_NAME": "Enter Name",
   "ENTER_PASSWORD": "Enter Password"
 }
