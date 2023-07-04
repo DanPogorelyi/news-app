@@ -1,26 +1,21 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 
 import { classNames } from 'shared/libs';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 
-import { useTranslation } from 'react-i18next';
 import { ButtonSize } from 'shared/ui/Button/ui/Button';
-import { AppLink } from 'shared/ui/AppLink';
-import { AppLinkTheme } from 'shared/ui/AppLink/ui/AppLink';
-import { routePath } from 'shared/config/routeConfig/routeConfig';
-import MainIcon from 'shared/assets/icons/main-20x20.svg';
-import AbountIcon from 'shared/assets/icons/about-20x20.svg';
+import { sidebarItemsList } from 'widgets/Sidebar/model/items';
+import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
 
 type Props = {
     className?: string;
 }
 
-export const Sidebar = ({ className }: Props) => {
+export const Sidebar = memo(({ className }: Props) => {
     const [collapsed, setCollapsed] = useState(false);
-    const { t } = useTranslation();
 
     const handleToggle = () => {
         setCollapsed((prevState) => !prevState);
@@ -32,23 +27,13 @@ export const Sidebar = ({ className }: Props) => {
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
             <div className={cls.nav}>
-                <AppLink
-                    to={routePath.main}
-                    theme={AppLinkTheme.INVERTED}
-                    className={cls.navItem}
-
-                >
-                    <MainIcon className={cls.icon} />
-                    <span className={cls.link}>{t('MAIN_PAGE', { ns: 'main' })}</span>
-                </AppLink>
-                <AppLink
-                    to={routePath.about}
-                    theme={AppLinkTheme.INVERTED}
-                    className={cls.navItem}
-                >
-                    <AbountIcon className={cls.icon} />
-                    <span className={cls.link}>{t('ABOUT_PAGE', { ns: 'about' })}</span>
-                </AppLink>
+                {sidebarItemsList.map((item) => (
+                    <SidebarItem
+                        key={item.path}
+                        item={item}
+                        collapsed={collapsed}
+                    />
+                ))}
             </div>
 
             <Button
@@ -68,4 +53,6 @@ export const Sidebar = ({ className }: Props) => {
             </div>
         </div>
     );
-};
+});
+
+Sidebar.displayName = 'Sidebar';

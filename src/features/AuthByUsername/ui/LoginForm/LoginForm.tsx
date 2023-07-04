@@ -1,6 +1,6 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { classNames } from 'shared/libs';
 import { Button, ButtonTheme } from 'shared/ui/Button';
@@ -10,6 +10,7 @@ import { Text, TextTheme } from 'shared/ui/Text';
 import {
     DynamicModuleLoader, ReducersMap,
 } from 'shared/libs/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/libs/hooks/useAppDispatch/useAppDispatch';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
@@ -20,31 +21,39 @@ import { getLoginError } from '../../model/selectors/getLoginError/getLoginError
 
 export type Props = {
     className?: string;
+    onSuccess: () => void;
 }
 
 const initialReducers: ReducersMap = {
     loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className }: Props) => {
+const LoginForm = memo(({ className, onSuccess }: Props) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const userName = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
     const isLoading = useSelector(getLoginIsLoading);
     const error = useSelector(getLoginError);
 
-    const handleUserNameChange = (value: string) => {
+    const handleUserNameChange = useCallback((value: string) => {
         dispatch(loginActions.setUserName(value));
-    };
+    }, [dispatch]);
 
-    const handlePasswordChange = (value: string) => {
+    const handlePasswordChange = useCallback((value: string) => {
         dispatch(loginActions.setPassword(value));
-    };
+    }, [dispatch]);
 
-    const handleLoginClick = () => {
-        dispatch(loginByUserName({ username: userName, password }));
+    const handleLoginClick = async () => {
+        const result = await dispatch(loginByUserName({
+            password,
+            username: userName,
+        }));
+
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSuccess();
+        }
     };
 
     return (

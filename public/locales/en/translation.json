@@ -10,5 +10,8 @@
   "LOGIN_FORM": "Login Form",
   "LOGIN_ERROR": "You have entered an invalid username or password",
   "ENTER_NAME": "Enter Name",
-  "ENTER_PASSWORD": "Enter Password"
+  "ENTER_PASSWORD": "Enter Password",
+  "MAIN_PAGE": "Main Page",
+  "ABOUT_PAGE": "About Page",
+  "PROFILE_PAGE": "Profile Page"
 }

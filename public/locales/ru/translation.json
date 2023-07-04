@@ -10,5 +10,8 @@
   "LOGIN_FORM": "Форма Авторизации",
   "LOGIN_ERROR": "Вы ввели неверный логин или пароль",
   "ENTER_NAME": "Введите имя",
-  "ENTER_PASSWORD": "Введите пароль"
+  "ENTER_PASSWORD": "Введите пароль",
+  "MAIN_PAGE": "Главная страница",
+  "ABOUT_PAGE": "О Сайте",
+  "PROFILE_PAGE": "Профиль"
 }

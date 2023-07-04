@@ -1,8 +1,9 @@
 import { FC, useEffect } from 'react';
-import { useDispatch, useStore } from 'react-redux';
+import { useStore } from 'react-redux';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
 import { StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
 import { Reducer } from '@reduxjs/toolkit';
+import { useAppDispatch } from 'shared/libs/hooks/useAppDispatch/useAppDispatch';
 
 export type ReducersMap = {
     [name in StateSchemaKey]?: Reducer
@@ -21,7 +22,7 @@ export const DynamicModuleLoader: FC<Props> = ({
     removeAfterUnmount,
 }) => {
     const store = useStore() as ReduxStoreWithManager;
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         Object.entries(reducers).forEach(([name, reducer]: ReducersMapEntry) => {

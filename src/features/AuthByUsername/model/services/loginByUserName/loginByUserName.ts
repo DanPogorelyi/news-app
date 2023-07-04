@@ -24,8 +24,8 @@ export const loginByUserName = createAsyncThunk<User, Params, {rejectValue: stri
 
             return response.data;
         } catch (e) {
-            console.log('loginByUserName e', e);
-            return thunkAPI.rejectWithValue('loginByUserName error');
+            // console.log('loginByUserName e', e);
+            return thunkAPI.rejectWithValue('error');
         }
     },
 );
