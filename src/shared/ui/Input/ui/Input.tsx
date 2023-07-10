@@ -34,8 +34,6 @@ export const Input = memo(({
         onChange?.(e.target.value);
     };
 
-    console.log('render');
-
     return (
         <div className={classNames(cls.InputWrapper, {}, [className])}>
             <input
