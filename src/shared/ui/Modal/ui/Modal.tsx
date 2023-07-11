@@ -5,6 +5,7 @@ import {
 import { classNames } from 'shared/libs';
 import { Portal } from 'shared/ui/Portal';
 
+import { Mods } from 'shared/libs/classNames/classNames';
 import cls from './Modal.module.scss';
 
 type Props = {
@@ -54,7 +55,7 @@ export const Modal = ({
         e.stopPropagation();
     };
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
     };
 
