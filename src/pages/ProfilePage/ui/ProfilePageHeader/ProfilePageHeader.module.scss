@@ -1,0 +1,9 @@
+.ProfilePageHeader {
+    display: flex;
+    margin-bottom: var(--default-padding);
+
+    .editBtn {
+        margin-right: calc(var(--default-padding) / 2);
+        margin-left: auto;
+    }
+}

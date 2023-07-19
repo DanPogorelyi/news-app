@@ -2,5 +2,13 @@
   "PROFILE": "Профиль",
   "EDIT": "Редактировать",
   "YOUR_FIRST_NAME": "Ваше имя",
-  "YOUR_LAST_NAME": "Ваша фамилия"
+  "YOUR_LAST_NAME": "Ваша фамилия",
+  "LOAD_ERROR_TITLE": "Произошла ошибка при загрузке данных",
+  "LOAD_ERROR_TEXT": "Попробуйте обновить страницу",
+  "CANCEL": "Отменить",
+  "SAVE": "Сохранить",
+  "USERNAME": "Ваш Username",
+  "AVATAR": "Ссылка на аватар",
+  "CURRENCY": "Выберите валюту",
+  "COUNTRY": "Выберите страну"
 }

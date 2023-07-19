@@ -1,0 +1,16 @@
+.SelectWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.select {
+    padding: 5px;
+    color: var(--primary-color);
+    background: none;
+    border: 1px solid var(--primary-color);
+    outline: none;
+}
+
+.readonly {
+    opacity: 0.3;
+}

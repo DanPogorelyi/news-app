@@ -2,5 +2,13 @@
   "PROFILE": "Profile",
   "EDIT": "Edit",
   "YOUR_FIRST_NAME": "Your firstname",
-  "YOUR_LAST_NAME": "Your lastname"
+  "YOUR_LAST_NAME": "Your lastname",
+  "LOAD_ERROR_TITLE": "An error occurred while loading the data",
+  "LOAD_ERROR_TEXT": "Please try refreshing the page",
+  "CANCEL": "Cancel",
+  "SAVE": "Save",
+  "USERNAME": "Your Username",
+  "AVATAR": "Avatar link",
+  "CURRENCY": "Select currency",
+  "COUNTRY": "Select country"
 }
