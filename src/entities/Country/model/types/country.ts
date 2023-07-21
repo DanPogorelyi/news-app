@@ -1,4 +1,4 @@
-export const enum Country {
+export enum Country {
     Russia = 'Russia',
     Ukraine = 'Ukraine',
     Belarus = 'Belarus',

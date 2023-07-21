@@ -10,5 +10,10 @@
   "USERNAME": "Your Username",
   "AVATAR": "Avatar link",
   "CURRENCY": "Select currency",
-  "COUNTRY": "Select country"
+  "COUNTRY": "Select country",
+  "SERVER_ERROR": "Server error",
+  "NO_DATA": "No profile data",
+  "INCORRECT_USER_DATA": "Incorrect user data",
+  "INCORRECT_USER_AGE": "Incorrect age",
+  "INCORRECT_USER_COUNTRY": "Incorrect country"
 }

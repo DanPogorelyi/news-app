@@ -12,11 +12,7 @@ type Props = {
     onChange?: (value: Currency) => void;
 }
 
-const options = [
-    { value: Currency.EUR, content: Currency.EUR },
-    { value: Currency.USD, content: Currency.USD },
-    { value: Currency.RUB, content: Currency.RUB },
-];
+const options = Object.entries(Currency).map(([value, content]) => ({ value, content }));
 
 export const CurrencySelect = memo(({
     className,
