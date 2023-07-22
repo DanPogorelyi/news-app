@@ -43,7 +43,10 @@ const ProfilePage = ({ className }: Props) => {
     const validateErrors = useSelector(getProfileValidateErrors);
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        // FIXME: very bad
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const handleChangeFirstName = useCallback((value?: string) => {

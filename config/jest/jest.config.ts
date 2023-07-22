@@ -6,19 +6,10 @@
 import path from 'path';
 
 export default {
-    // All imported modules in your tests should be mocked automatically
-    // automock: false,
-
-    // Stop running tests after `n` failures
-    // bail: 0,
-
-    // The directory where Jest should store its cached dependency information
-    // cacheDirectory: "/private/var/folders/pm/b676q_sd4tz5jqw9sfj1876r0000gn/T/jest_dx",
-
-    // A set of global variables that need to be available in all test environments
     globals: {
         __IS_DEV__: true,
         __API__: '',
+        __PROJECT__: 'jest',
     },
 
     // Automatically clear mock calls, instances, contexts and results before every test

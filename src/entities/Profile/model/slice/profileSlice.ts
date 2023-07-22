@@ -9,6 +9,7 @@ const initialState: ProfileSchema = {
     isLoading: false,
     error: undefined,
     readonly: true,
+    validateErrors: [],
 };
 
 export const profileSlice = createSlice({
