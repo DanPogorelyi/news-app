@@ -93,13 +93,13 @@ const ProfilePage = ({ className }: Props) => {
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
-                {validateErrors?.length && validateErrors.map((error) => (
+                {validateErrors?.length ? validateErrors.map((error) => (
                     <Text
                         key={error}
                         theme={TextTheme.ERROR}
                         text={validateErrorsTranslate[error]}
                     />
-                ))}
+                )) : null}
                 <ProfileCard
                     data={form}
                     error={error}
