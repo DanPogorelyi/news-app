@@ -13,12 +13,18 @@ export const enum TextAlign {
     LEFT = 'left'
 }
 
+export const enum TextSize {
+    M = 'size_m',
+    L = 'size_l',
+}
+
 type Props = {
     className?: string;
     title?: string;
     text?: string;
     theme?: TextTheme;
     align?: TextAlign;
+    size?: TextSize
 }
 
 export const Text = ({
@@ -27,8 +33,9 @@ export const Text = ({
     text,
     theme = TextTheme.PRIMARY,
     align = TextAlign.LEFT,
+    size = TextSize.M,
 }: Props) => (
-    <div className={classNames(cls.Text, {}, [className, cls[theme], cls[align]])}>
+    <div className={classNames(cls.Text, {}, [className, cls[theme], cls[align], cls[size]])}>
         {title && <p className={cls.title}>{title}</p>}
         {text && <p className={cls.text}>{text}</p>}
     </div>
