@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { classNames } from 'shared/libs';
 import {
     DynamicModuleLoader,
@@ -23,6 +23,7 @@ import {
 } from 'entities/Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { Text, TextTheme } from 'shared/ui/Text';
 import { useTranslation } from 'react-i18next';
+import { useInitialEffect } from 'shared/libs/hooks/useInitialEffect/useInitialEffect';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 type Props = {
@@ -42,12 +43,9 @@ const ProfilePage = ({ className }: Props) => {
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
 
-    useEffect(() => {
-        // FIXME: very bad
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
-        }
-    }, [dispatch]);
+    useInitialEffect(() => {
+        dispatch(fetchProfileData());
+    });
 
     const handleChangeFirstName = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ firstname: value }));

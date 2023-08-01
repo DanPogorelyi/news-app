@@ -1,4 +1,6 @@
 {
   "ARTICLE_NOT_FOUND": "Статья не найдена",
-  "ARTICLE_LOAD_ERROR": "Произошла ошибка при загрузке статьи"
+  "ARTICLE_LOAD_ERROR": "Произошла ошибка при загрузке статьи",
+  "COMMENTS": "Комментарии",
+  "COMMENTS_ARE_ABSENT": "Комментарии отсутствуют"
 }
