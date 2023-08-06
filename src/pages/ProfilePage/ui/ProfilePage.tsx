@@ -24,6 +24,7 @@ import {
 import { Text, TextTheme } from 'shared/ui/Text';
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from 'shared/libs/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 type Props = {
@@ -35,6 +36,8 @@ const initialReducers: ReducersMap = {
 };
 
 const ProfilePage = ({ className }: Props) => {
+    const { id } = useParams();
+
     const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
     const form = useSelector(getProfileForm);
@@ -44,7 +47,9 @@ const ProfilePage = ({ className }: Props) => {
     const validateErrors = useSelector(getProfileValidateErrors);
 
     useInitialEffect(() => {
-        dispatch(fetchProfileData());
+        if (id) {
+            dispatch(fetchProfileData(id));
+        }
     });
 
     const handleChangeFirstName = useCallback((value?: string) => {
@@ -88,7 +93,7 @@ const ProfilePage = ({ className }: Props) => {
     };
 
     return (
-        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={initialReducers}>
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
                 {validateErrors?.length ? validateErrors.map((error) => (

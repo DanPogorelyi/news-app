@@ -12,6 +12,7 @@ const profile: Profile = {
     currency: Currency.USD,
     country: Country.Russia,
     city: 'Tbilisi',
+    id: '1',
 };
 
 describe('updateProfileData', () => {

@@ -2,5 +2,7 @@
   "ARTICLE_NOT_FOUND": "Article not found",
   "ARTICLE_LOAD_ERROR": "An error occurred while loading the article.",
   "COMMENTS": "Comments",
-  "COMMENTS_ARE_ABSENT": "Comments are absent"
+  "COMMENTS_ARE_ABSENT": "Comments are absent",
+  "ENTER_COMMENT": "Enter your comment",
+  "SUBMIT_FORM": "Send"
 }

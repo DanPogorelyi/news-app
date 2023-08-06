@@ -2,5 +2,7 @@
   "ARTICLE_NOT_FOUND": "Статья не найдена",
   "ARTICLE_LOAD_ERROR": "Произошла ошибка при загрузке статьи",
   "COMMENTS": "Комментарии",
-  "COMMENTS_ARE_ABSENT": "Комментарии отсутствуют"
+  "COMMENTS_ARE_ABSENT": "Комментарии отсутствуют",
+  "ENTER_COMMENT": "Введите ваш комментарий",
+  "SUBMIT_FORM": "Отправить"
 }

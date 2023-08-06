@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -11,12 +13,17 @@ import {
     DynamicModuleLoader,
     ReducersMap,
 } from 'shared/libs/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useSelector } from 'react-redux';
+
 import { useInitialEffect } from 'shared/libs/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/libs/hooks/useAppDispatch/useAppDispatch';
+import { AddCommentForm } from 'features/AddCommentForm';
+
 import {
     fetchCommentsByArticleId,
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import {
+    addCommentForArticle,
+} from '../../model/services/addCommentForArticle/addCommentForArticle';
 import {
     articleDetailsCommentsReducer,
     getArticleComments,
@@ -43,6 +50,10 @@ const ArticleDetailsPage = ({ className }: Props) => {
         dispatch(fetchCommentsByArticleId(id));
     });
 
+    const handleSendComment = useCallback((text: string) => {
+        dispatch(addCommentForArticle(text));
+    }, [dispatch]);
+
     if (!id) {
         return (
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
@@ -52,10 +63,11 @@ const ArticleDetailsPage = ({ className }: Props) => {
     }
 
     return (
-        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={initialReducers}>
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetails id={id} />
                 <Text title={t('COMMENTS')} className={classNames(cls.commentTitle)} />
+                <AddCommentForm onSendComment={handleSendComment} />
                 <CommentList
                     isLoading={commentsIsLoading}
                     comments={comments}
