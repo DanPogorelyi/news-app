@@ -1,0 +1,11 @@
+.LIST {
+    .card {
+        margin-bottom: var(--default-padding);
+    }
+}
+
+.GRID {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--default-padding);
+}

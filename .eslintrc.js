@@ -50,6 +50,7 @@ module.exports = {
         'jsx-a11y/click-events-have-key-events': 'off', // TODO: fix
         'no-param-reassign': 'off', // TODO: for redux toolkit, fix
         'no-undef': 'off',
+        'react/no-array-index-key': 'off',
     },
     globals: {
         __IS_DEV__: true,
