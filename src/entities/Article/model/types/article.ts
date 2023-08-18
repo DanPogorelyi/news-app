@@ -54,7 +54,7 @@ export interface ArticleDetailsSchema {
     error?: string;
 }
 
-export const enum ArticleView {
+export enum ArticleView {
     LIST = 'LIST',
     GRID = 'GRID'
 }

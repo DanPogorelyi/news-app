@@ -39,17 +39,10 @@ export const ArticleList = ({
         />
     )), [articles, view]);
 
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
-
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-            {articles.length > 0 ? content : <div>777</div>}
+            {articles.length > 0 ? content : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 };

@@ -20,6 +20,7 @@ import { AddCommentForm } from 'features/AddCommentForm';
 
 import { Button } from 'shared/ui/Button';
 import { routePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -63,15 +64,15 @@ const ArticleDetailsPage = ({ className }: Props) => {
 
     if (!id) {
         return (
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 {t('ARTICLE_NOT_FOUND')}
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={initialReducers}>
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <Button onClick={navigateToList}>{t('BACK_TO_ARTICLES')}</Button>
                 <ArticleDetails id={id} />
                 <Text title={t('COMMENTS')} className={classNames(cls.commentTitle)} />
@@ -80,7 +81,7 @@ const ArticleDetailsPage = ({ className }: Props) => {
                     isLoading={commentsIsLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input';
+import { Page } from 'shared/ui/Page';
 
 const MainPage = () => {
     const { t } = useTranslation();
@@ -12,10 +13,10 @@ const MainPage = () => {
     };
 
     return (
-        <div>
+        <Page>
             <Input value={inputValue} onChange={handleChange} />
             {t('MAIN_PAGE')}
-        </div>
+        </Page>
     );
 };
 
