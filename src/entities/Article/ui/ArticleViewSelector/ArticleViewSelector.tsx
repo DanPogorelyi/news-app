@@ -4,9 +4,9 @@ import { classNames } from 'shared/libs';
 import ListIcon from 'shared/assets/icons/list-24-24.svg';
 import GridIcon from 'shared/assets/icons/grid-24-24.svg';
 
-import { ArticleView } from 'entities/Article';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Icon } from 'shared/ui/Icon';
+import { ArticleView } from '../../model/types/article';
 
 import cls from './ArticleViewSelector.module.scss';
 
