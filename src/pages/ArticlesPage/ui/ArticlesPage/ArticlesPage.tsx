@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+import { useSelector } from 'react-redux';
 
 import { classNames } from 'shared/libs';
 
@@ -9,23 +10,16 @@ import {
 } from 'shared/libs/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/libs/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/libs/hooks/useInitialEffect/useInitialEffect';
-import { useSelector } from 'react-redux';
-import { ArticleView, ArticleViewSelector } from 'entities/Article';
 
 import { Page } from 'shared/ui/Page';
-import {
-    fetchMoreArticles,
-} from 'pages/ArticlesPage/model/services/fetchMoreArticles/fetchMoreArticles';
-import {
-    initArticlesPage,
-} from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
+
+import { useSearchParams } from 'react-router-dom';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { fetchMoreArticles } from '../../model/services/fetchMoreArticles/fetchMoreArticles';
 import { getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPage';
 import cls from './ArticlesPage.module.scss';
-import {
-    articlesPageSliceActions,
-    articlesPageSliceReducer,
-    getArticles,
-} from '../../model/slices/articlesPageSlice';
+import { articlesPageSliceReducer, getArticles } from '../../model/slices/articlesPageSlice';
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 
 type Props = {
     className?: string;
@@ -36,6 +30,7 @@ const initialReducers: ReducersMap = {
 };
 
 const ArticlesPage = ({ className }: Props) => {
+    const [searchParams] = useSearchParams();
     const dispatch = useAppDispatch();
 
     const articles = useSelector(getArticles.selectAll);
@@ -43,24 +38,21 @@ const ArticlesPage = ({ className }: Props) => {
     const view = useSelector(getArticlesPageView);
 
     useInitialEffect(() => {
-        dispatch(initArticlesPage());
+        dispatch(initArticlesPage(searchParams));
     });
 
     const loadMore = useCallback(() => {
         dispatch(fetchMoreArticles());
     }, [dispatch]);
 
-    const handleChangeView = useCallback((view: ArticleView) => {
-        dispatch(articlesPageSliceActions.setView(view));
-    }, [dispatch]);
-
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={false}>
             <Page className={classNames(cls.ArticlesPage, {}, [className])} onScrollEnd={loadMore}>
-                <ArticleViewSelector view={view} onChangeView={handleChangeView} />
+                <ArticlesPageFilters />
                 <ArticleList
                     view={view}
                     articles={articles}
+                    className={cls.list}
                     isLoading={isLoading}
                 />
             </Page>

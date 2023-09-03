@@ -44,7 +44,7 @@ module.exports = {
         'no-underscore-dangle': 'off',
         '@typescript-eslint/no-unused-vars': ['error'],
         'max-len': ['error',
-            { code: 100, ignoreComments: true, ignoreTrailingComments: true },
+            { code: 120, ignoreComments: true, ignoreTrailingComments: true },
         ],
         'jsx-a11y/no-static-element-interactions': 'off', // TODO: fix
         'jsx-a11y/click-events-have-key-events': 'off', // TODO: fix

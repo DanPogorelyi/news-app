@@ -6,5 +6,18 @@
   "ENTER_COMMENT": "Введите ваш комментарий",
   "SUBMIT_FORM": "Отправить",
   "READ_MORE": "Читать далее",
-  "BACK_TO_ARTICLES": "Назад к статьям"
+  "BACK_TO_ARTICLES": "Назад к статьям",
+  "SORT_BY": "Сортировать по",
+  "SEARCH": "Поиск",
+  "SORT_ASC": "По возрастанию",
+  "SORT_DESC": "По убыванию",
+  "SORT_BY_DATE": "Дате",
+  "SORT_BY_VIEWS": "Просмотрам",
+  "SORT_BY_TITLE": "Заголовку",
+  "ORDER": "Порядок",
+  "ALL": "Все",
+  "IT": "IT",
+  "SCIENCE": "Наука",
+  "ECONOMICS": "Экономика",
+  "ARTICLES_NOT_FOUND": "Статьи не найдены"
 }

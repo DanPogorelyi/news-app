@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
 
 import { classNames } from 'shared/libs';
+import { useTranslation } from 'react-i18next';
+import { Text, TextSize } from 'shared/ui/Text';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Article, ArticleView } from '../../model/types/article';
@@ -30,6 +32,8 @@ export const ArticleList = ({
     isLoading,
     view = ArticleView.GRID,
 }: Props) => {
+    const { t } = useTranslation('article');
+
     const content = useMemo(() => articles.map((article) => (
         <ArticleListItem
             key={article.id}
@@ -38,6 +42,14 @@ export const ArticleList = ({
             className={cls.card}
         />
     )), [articles, view]);
+
+    if (!isLoading && articles.length === 0) {
+        return (
+            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                <Text title={t('ARTICLES_NOT_FOUND')} size={TextSize.L} />
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>

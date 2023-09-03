@@ -6,5 +6,18 @@
   "ENTER_COMMENT": "Enter your comment",
   "SUBMIT_FORM": "Send",
   "READ_MORE": "Read more",
-  "BACK_TO_ARTICLES": "Back to articles"
+  "BACK_TO_ARTICLES": "Back to articles",
+  "SORT_BY": "Sort by",
+  "SEARCH": "Search",
+  "SORT_ASC": "Asc",
+  "SORT_DESC": "Desc",
+  "SORT_BY_DATE": "Date",
+  "SORT_BY_VIEWS": "Views",
+  "SORT_BY_TITLE": "Title",
+  "ORDER": "Order",
+  "ALL": "All",
+  "IT": "IT",
+  "SCIENCE": "Science",
+  "ECONOMICS": "Economics",
+  "ARTICLES_NOT_FOUND": "Articles not found"
 }
