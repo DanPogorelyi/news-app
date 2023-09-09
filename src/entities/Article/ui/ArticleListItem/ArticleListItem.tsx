@@ -1,3 +1,4 @@
+import { HTMLAttributeAnchorTarget } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/libs';
@@ -8,8 +9,9 @@ import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import { Avatar } from 'shared/ui/Avatar';
 import { Button } from 'shared/ui/Button';
 
-import { useNavigate } from 'react-router-dom';
 import { routePath } from 'shared/config/routeConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink';
+
 import { ArticleText } from '../ArticleText/ArticleText';
 import {
     Article,
@@ -24,15 +26,16 @@ type Props = {
     className?: string;
     article: Article;
     view: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
-export const ArticleListItem = ({ className, article, view }: Props) => {
+export const ArticleListItem = ({
+    className,
+    article,
+    target,
+    view,
+}: Props) => {
     const { t } = useTranslation('article');
-    const navigate = useNavigate();
-
-    const navigateToArticle = () => {
-        navigate(routePath.article_details + article.id);
-    };
 
     const types = <Text className={cls.types} text={article.type.join(', ')} />;
     const views = (
@@ -44,8 +47,12 @@ export const ArticleListItem = ({ className, article, view }: Props) => {
 
     if (view === ArticleView.GRID) {
         return (
-            <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-                <Card className={cls.card} onClick={navigateToArticle}>
+            <AppLink
+                to={routePath.article_details + article.id}
+                target={target}
+                className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+            >
+                <Card className={cls.card}>
                     <div className={cls.imageWrapper}>
                         <img
                             src={article.img}
@@ -60,7 +67,7 @@ export const ArticleListItem = ({ className, article, view }: Props) => {
                     </div>
                     <Text text={article.title} className={cls.title} />
                 </Card>
-            </div>
+            </AppLink>
         );
     }
 
@@ -88,9 +95,11 @@ export const ArticleListItem = ({ className, article, view }: Props) => {
                         block={textBlock}
                         className={cls.textBlock}
                     />
-                ) }
+                )}
                 <div className={cls.footer}>
-                    <Button onClick={navigateToArticle}>{t('READ_MORE')}</Button>
+                    <AppLink to={routePath.article_details + article.id} target={target}>
+                        <Button>{t('READ_MORE')}</Button>
+                    </AppLink>
                     {views}
                 </div>
             </Card>

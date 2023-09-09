@@ -2,6 +2,18 @@
     min-height: 100%;
 }
 
-.commentTitle {
+.commentsTitle {
     margin-top: var(--default-padding);
+}
+
+.recommendationsTitle {
+    margin-top: var(--default-padding);
+}
+
+.recommendations {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: var(--default-padding);
+    overflow-x: auto;
+    overflow-y: hidden;
 }

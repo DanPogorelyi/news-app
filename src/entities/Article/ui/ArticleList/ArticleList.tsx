@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { HTMLAttributeAnchorTarget, useMemo } from 'react';
 
 import { classNames } from 'shared/libs';
 import { useTranslation } from 'react-i18next';
@@ -14,6 +14,7 @@ type Props = {
     articles: Article[];
     isLoading?: boolean;
     view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => Array
@@ -31,6 +32,7 @@ export const ArticleList = ({
     articles,
     isLoading,
     view = ArticleView.GRID,
+    target,
 }: Props) => {
     const { t } = useTranslation('article');
 
@@ -39,6 +41,7 @@ export const ArticleList = ({
             key={article.id}
             view={view}
             article={article}
+            target={target}
             className={cls.card}
         />
     )), [articles, view]);
