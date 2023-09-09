@@ -6,6 +6,7 @@ import { ProfilePage } from 'pages/ProfilePage';
 import { ProtectedRoute } from 'app/providers/Router/ui/ProtectedRoute';
 import { ArticlesPage } from 'pages/ArticlesPage';
 import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
+import { ArticleEditPage } from 'pages/ArticleEditPage';
 
 const enum AppRoutes {
     MAIN= 'main',
@@ -13,6 +14,8 @@ const enum AppRoutes {
     PROFILE = 'profile',
     ARTICLES = 'articles',
     ARTICLE_DETAILS = 'article_details',
+    ARTICLE_CREATE = 'article_create',
+    ARTICLE_EDIT = 'article_edit',
     NOT_FOUND = 'not_found'
 }
 
@@ -22,6 +25,8 @@ export const routePath: Record<AppRoutes, string> = {
     [AppRoutes.PROFILE]: '/profile/', // +id
     [AppRoutes.ARTICLES]: '/articles',
     [AppRoutes.ARTICLE_DETAILS]: '/articles/', // +id
+    [AppRoutes.ARTICLE_CREATE]: '/articles/new',
+    [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
     [AppRoutes.NOT_FOUND]: '*',
 };
 
@@ -55,6 +60,22 @@ export const routeConfig: RouteObject[] = [
         element: (
             <ProtectedRoute>
                 <ArticleDetailsPage />
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: `${routePath[AppRoutes.ARTICLE_CREATE]}`,
+        element: (
+            <ProtectedRoute>
+                <ArticleEditPage />
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: `${routePath[AppRoutes.ARTICLE_EDIT]}`,
+        element: (
+            <ProtectedRoute>
+                <ArticleEditPage />
             </ProtectedRoute>
         ),
     },

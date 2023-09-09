@@ -1,9 +1,13 @@
 .Navbar {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     width: 100%;
     height: var(--navbar-height);
     padding: var(--default-padding);
     background: var(--inverted-bg-color);
+}
+
+.createBtn {
+    margin-right: var(--default-padding);
+    margin-left: auto;
 }
