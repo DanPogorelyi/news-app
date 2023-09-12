@@ -2,7 +2,7 @@ import { memo, ReactNode } from 'react';
 
 import { classNames } from 'shared/libs';
 
-import { Card, CardTheme } from 'shared/ui/Card';
+import { Card, CardTheme } from '../../Card/ui/Card';
 import cls from './Tabs.module.scss';
 
 export type Tab = {

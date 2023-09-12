@@ -3,9 +3,10 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/libs';
 import { Select, type SelectOption } from 'shared/ui/Select';
-
-import { ArticleSortField } from 'entities/Article';
 import { SortOrder } from 'shared/types';
+
+import { ArticleSortField } from '../../model/types/article';
+
 import cls from './ArticleSortSelectors.module.scss';
 
 type Props = {

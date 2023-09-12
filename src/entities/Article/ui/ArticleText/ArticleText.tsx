@@ -1,8 +1,10 @@
 import { memo } from 'react';
-import { classNames } from 'shared/libs';
 
-import { ArticleTextBlock } from 'entities/Article/model/types/article';
+import { classNames } from 'shared/libs';
 import { Text } from 'shared/ui/Text';
+
+import { ArticleTextBlock } from '../../model/types/article';
+
 import cls from './ArticleText.module.scss';
 
 type Props = {

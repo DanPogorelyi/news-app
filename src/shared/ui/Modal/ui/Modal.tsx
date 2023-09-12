@@ -3,9 +3,9 @@ import {
 } from 'react';
 
 import { classNames } from 'shared/libs';
-import { Portal } from 'shared/ui/Portal';
-
 import { Mods } from 'shared/libs/classNames/classNames';
+import { Portal } from '../../Portal';
+
 import cls from './Modal.module.scss';
 
 type Props = {

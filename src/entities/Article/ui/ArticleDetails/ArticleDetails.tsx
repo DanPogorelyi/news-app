@@ -1,5 +1,6 @@
 import { memo, useMemo } from 'react';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/libs';
 import {
@@ -8,23 +9,18 @@ import {
 } from 'shared/libs/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/libs/hooks/useAppDispatch/useAppDispatch';
 import {
-    fetchArticleById,
-} from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
-
-import {
     Text, TextAlign, TextSize, TextTheme,
 } from 'shared/ui/Text';
 
-import { useTranslation } from 'react-i18next';
 import { Skeleton } from 'shared/ui/Skeleton';
 import { Avatar } from 'shared/ui/Avatar';
+import { Icon } from 'shared/ui/Icon';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
-import { Icon } from 'shared/ui/Icon';
-
-import { ArticleBlockType } from 'entities/Article/model/types/article';
 import { useInitialEffect } from 'shared/libs/hooks/useInitialEffect/useInitialEffect';
-import cls from './ArticleDetails.module.scss';
+
+import { ArticleBlockType } from '../../model/types/article';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import {
     getArticleDetailsData,
@@ -34,6 +30,8 @@ import {
 import { ArticleCode } from '../ArticleCode/ArticleCode';
 import { ArticleText } from '../ArticleText/ArticleText';
 import { ArticleImage } from '../ArticleImage/ArticleImage';
+
+import cls from './ArticleDetails.module.scss';
 
 type Props = {
     className?: string;

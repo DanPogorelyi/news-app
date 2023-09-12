@@ -15,9 +15,9 @@ import {
 import { Card } from 'shared/ui/Card';
 import { Input } from 'shared/ui/Input';
 import { SortOrder } from 'shared/types';
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import { useDebounce } from 'shared/libs/hooks/useDebounce/useDebounce';
 import { ArticleType } from 'entities/Article/model/types/article';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageSliceActions } from '../../model/slices/articlesPageSlice';
 import {
     getArticlesPageOrder,

@@ -22,6 +22,7 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'i18next',
+        'dan-path-checker',
     ],
 
     rules: {
@@ -51,6 +52,7 @@ module.exports = {
         'no-param-reassign': 'off', // TODO: for redux toolkit, fix
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
+        'dan-path-checker/dan-path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,

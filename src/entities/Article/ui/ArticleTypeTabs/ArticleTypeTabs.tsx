@@ -3,7 +3,7 @@ import { classNames } from 'shared/libs';
 
 import { Tab, Tabs } from 'shared/ui/Tabs';
 import { useCallback, useMemo } from 'react';
-import { ArticleType } from 'entities/Article';
+import { ArticleType } from '../../model/types/article';
 
 type Props = {
     className?: string;

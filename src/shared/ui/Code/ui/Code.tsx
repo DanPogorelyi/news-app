@@ -1,7 +1,7 @@
 import { classNames } from 'shared/libs';
 
-import { Button, ButtonTheme } from 'shared/ui/Button';
 import CopyIcon from 'shared/assets/icons/copy-20-20.svg';
+import { Button, ButtonTheme } from '../../Button';
 import cls from './Code.module.scss';
 
 type Props = {

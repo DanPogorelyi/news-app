@@ -1,8 +1,8 @@
-import { classNames } from 'shared/libs';
-
 import { memo } from 'react';
+
+import { classNames } from 'shared/libs';
 import { Code } from 'shared/ui/Code';
-import { ArticleCodeBlock } from 'entities/Article/model/types/article';
+import { ArticleCodeBlock } from '../../model/types/article';
 import cls from './ArticleCode.module.scss';
 
 type Props = {

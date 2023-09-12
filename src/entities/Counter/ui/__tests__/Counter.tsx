@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { Counter } from 'entities/Counter';
 import { componentRender } from 'shared/libs/tests/componentRender/componentRender';
+import { Counter } from '../Counter';
 
 describe('Counter', () => {
     it('should display correct counter value', () => {

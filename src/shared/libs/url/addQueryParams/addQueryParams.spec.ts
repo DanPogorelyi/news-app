@@ -1,4 +1,4 @@
-import { getQueryParams } from 'shared/libs/url/addQueryParams/addQueryParams';
+import { getQueryParams } from '../addQueryParams/addQueryParams';
 
 const setLocationSearch = (search: string) => {
     delete (window as any).location;

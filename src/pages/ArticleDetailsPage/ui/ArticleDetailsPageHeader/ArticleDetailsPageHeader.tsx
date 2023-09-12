@@ -6,8 +6,9 @@ import { classNames } from 'shared/libs';
 import { Button } from 'shared/ui/Button';
 import { routePath } from 'shared/config/routeConfig/routeConfig';
 
-import { getCanEditArticle } from 'pages/ArticleDetailsPage/model/selectors/article';
 import { getArticleDetailsData } from 'entities/Article';
+
+import { getCanEditArticle } from '../../model/selectors/article';
 import cls from './ArticleDetailsPageHeader.module.scss';
 
 type Props = {
