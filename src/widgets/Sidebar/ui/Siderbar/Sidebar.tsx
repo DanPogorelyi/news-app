@@ -6,6 +6,7 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button';
 
+import { VStack } from 'shared/ui/Stack';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 
@@ -28,7 +29,7 @@ export const Sidebar = memo(({ className }: Props) => {
             data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
         >
-            <div className={cls.nav}>
+            <VStack className={cls.nav} role="navigation">
                 {sidebarItems.map((item) => (
                     <SidebarItem
                         key={item.path}
@@ -36,7 +37,7 @@ export const Sidebar = memo(({ className }: Props) => {
                         collapsed={collapsed}
                     />
                 ))}
-            </div>
+            </VStack>
 
             <Button
                 square
