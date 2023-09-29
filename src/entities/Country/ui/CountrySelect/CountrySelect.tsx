@@ -1,11 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/libs';
-import { Select } from 'shared/ui/Select';
+import { ListBox } from 'shared/ui/ListBox';
 import { Country } from '../../model/types/country';
 
 type Props = {
-    className?: string;
     value?: Country;
     readonly?: boolean;
     onChange?: (value: Country) => void;
@@ -14,24 +12,23 @@ type Props = {
 const options = Object.entries(Country).map(([value, content]) => ({ value, content }));
 
 export const CountrySelect = memo(({
-    className,
     value,
     readonly,
     onChange,
 }: Props) => {
     const { t } = useTranslation('profile');
 
-    const handleChange = (value: string) => {
+    const handleChange = (value: any) => {
         onChange?.(value as Country);
     };
 
     return (
-        <Select
-            className={classNames('', {}, [className])}
+        <ListBox
             label={t('COUNTRY')}
             options={options}
             value={value}
             readonly={readonly}
+            direction="top"
             onChange={handleChange}
         />
     );

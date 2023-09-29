@@ -1,0 +1,29 @@
+.ListBox {
+    position: relative;
+}
+
+.options {
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+    background-color: var(--listbox-bg);
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px var(--listbox-bg);
+}
+
+.option {
+    padding: 10px 20px;
+}
+
+.active {
+    background-color: var(--inverted-primary-color);
+    cursor: pointer;
+}
+
+.disabled {
+    opacity: 0.6;
+}
+
+.optionsTop {
+    bottom: 100%;
+}
