@@ -10,6 +10,8 @@ import { useAppDispatch } from 'shared/libs/hooks/useAppDispatch/useAppDispatch'
 import { Text, TextTheme } from 'shared/ui/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 import { routePath } from 'shared/config/routeConfig/routeConfig';
+import { Dropdown } from 'shared/ui/Dropdown';
+import { Avatar } from 'shared/ui/Avatar';
 import cls from './Navbar.module.scss';
 
 type Props = {
@@ -46,20 +48,24 @@ export const Navbar = memo(({ className }: Props) => {
                 >
                     {t('CREATE_ARTICLE')}
                 </AppLink>
-                <Button
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    onClick={handleLogout}
-                >
-                    {t('LOGOUT')}
-                </Button>
+                <Dropdown
+                    trigger={<Avatar size={30} src={authData.avatar} />}
+                    options={[
+                        { content: t('LOGOUT'), onClick: handleLogout },
+                        { content: t('PROFILE'), href: routePath.profile + authData.id },
+                    ]}
+                    direction="bottom left"
+                />
             </header>
         );
     }
 
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
+            <Text title={t('APP_NAME')} theme={TextTheme.INVERTED} />
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
+                className={cls.loginBtn}
                 onClick={handleOpenModal}
             >
                 {t('LOGIN')}
