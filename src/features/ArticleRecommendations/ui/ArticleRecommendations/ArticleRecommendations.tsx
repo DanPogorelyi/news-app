@@ -17,11 +17,9 @@ export const ArticleRecommendations = memo((props: ArticleRecommendationsProps) 
 
     const { data, isLoading, error } = useGetArticleRecommendationsQuery(3);
 
-    if (isLoading || error) {
+    if (isLoading || error || !data) {
         return null;
     }
-
-    console.log('data', data);
 
     return (
         <VStack gap="8" className={classNames('', {}, [className])}>

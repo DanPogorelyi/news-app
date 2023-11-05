@@ -90,6 +90,8 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         [ValidateProfileError.INCORRECT_USER_COUNTRY]: t('INCORRECT_USER_COUNTRY'),
     };
 
+    console.log('validateErrors', validateErrors);
+
     return (
         <DynamicModuleLoader reducers={initialReducers}>
             <VStack
@@ -102,6 +104,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                     <Text
                         key={error}
                         theme={TextTheme.ERROR}
+                        data-testid="EditableProfileCard.Error"
                         text={validateErrorsTranslate[error]}
                     />
                 )) : null}
