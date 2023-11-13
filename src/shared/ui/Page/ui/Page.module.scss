@@ -1,5 +1,5 @@
 .Page {
-    flex-grow: 1;
+    flex: 1 1 0;
     height: calc(100vh - var(--navbar-height));
     padding: var(--default-padding);
     overflow-y: auto;
