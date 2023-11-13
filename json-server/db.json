@@ -590,13 +590,14 @@
       "id": "1",
       "username": "admin",
       "password": "123",
+      "roles": ["ADMIN"],
       "avatar": "https://fugitives.com/wp-content/uploads/2022/12/Avatar-Ending-Explained-2009-Fantasy-Thriller-Film-696x391.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
       "avatar": "https://variety.com/wp-content/uploads/2021/04/Avatar.jpg"
     }
   ],

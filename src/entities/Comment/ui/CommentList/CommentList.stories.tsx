@@ -1,6 +1,7 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
+import { UserRole } from 'entities/User';
 import { CommentList } from './CommentList';
 
 export default {
@@ -19,12 +20,12 @@ Normal.args = {
         {
             id: '1',
             text: 'hello world',
-            user: { id: '1', username: 'Vasya' },
+            user: { id: '1', username: 'Vasya', roles: [UserRole.ADMIN] },
         },
         {
             id: '2',
             text: 'Comment 2',
-            user: { id: '1', username: 'Petya' },
+            user: { id: '1', username: 'Petya', roles: [UserRole.ADMIN] },
         },
     ],
 };

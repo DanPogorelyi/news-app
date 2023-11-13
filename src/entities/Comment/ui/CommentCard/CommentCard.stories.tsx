@@ -1,6 +1,7 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
+import { UserRole } from 'entities/User';
 import { CommentCard } from './CommentCard';
 
 export default {
@@ -18,7 +19,7 @@ Normal.args = {
     comment: {
         id: '1',
         text: 'hello world',
-        user: { id: '1', username: 'Vasya' },
+        user: { id: '1', username: 'Vasya', roles: [UserRole.ADMIN] },
     },
 };
 

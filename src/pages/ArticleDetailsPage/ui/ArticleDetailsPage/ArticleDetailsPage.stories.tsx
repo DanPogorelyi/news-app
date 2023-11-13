@@ -1,9 +1,10 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Article } from 'entities/Article';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { UserRole } from 'entities/User';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 export default {
@@ -27,6 +28,7 @@ const article: Article = {
     user: {
         id: '1',
         username: 'Xren',
+        roles: [UserRole.ADMIN],
     },
     type: [ArticleType.IT],
     blocks: [

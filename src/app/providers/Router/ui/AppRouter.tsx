@@ -7,6 +7,8 @@ import { PageLoader } from 'widgets/PageLoader';
 export const AppRouter = () => {
     const element = useRoutes(routeConfig);
 
+    console.log('element', element);
+
     return (
         <Suspense fallback={<PageLoader />}>
             {element}

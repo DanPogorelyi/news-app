@@ -5,7 +5,9 @@ import { classNames } from 'shared/libs';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
 import { useAppDispatch } from 'shared/libs/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextTheme } from 'shared/ui/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
@@ -22,6 +24,8 @@ export const Navbar = memo(({ className }: Props) => {
     const { t } = useTranslation();
     const authData = useSelector(getUserAuthData);
     const dispatch = useAppDispatch();
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -36,6 +40,8 @@ export const Navbar = memo(({ className }: Props) => {
     const handleLogout = () => {
         dispatch(userActions.logout());
     };
+
+    const isAdminPanelAvailable = isAdmin || isManager;
 
     if (authData) {
         return (
@@ -53,6 +59,7 @@ export const Navbar = memo(({ className }: Props) => {
                     options={[
                         { content: t('LOGOUT'), onClick: handleLogout },
                         { content: t('PROFILE'), href: routePath.profile + authData.id },
+                        ...(isAdminPanelAvailable ? [{ content: t('ADMIN'), href: routePath.admin_panel }] : []),
                     ]}
                     direction="bottom left"
                 />

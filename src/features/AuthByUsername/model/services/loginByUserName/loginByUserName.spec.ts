@@ -1,10 +1,10 @@
-import { userActions } from 'entities/User';
+import { userActions, UserRole } from 'entities/User';
 import { TestAsyncThunk } from 'shared/libs/tests/TestAsyncThunk/TestAsyncThunk';
 import { loginByUserName } from './loginByUserName';
 
 describe('loginByUserName', () => {
     it('success login', async () => {
-        const userValue = { username: '123', id: '1' };
+        const userValue = { username: '123', id: '1', roles: [UserRole.ADMIN] };
         const thunk = new TestAsyncThunk(loginByUserName);
 
         thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }));

@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { UserRole } from 'entities/User';
 import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
 
@@ -25,6 +26,7 @@ const article: Article = {
     user: {
         id: '1',
         username: 'Xren',
+        roles: [UserRole.ADMIN],
     },
     type: [ArticleType.IT],
     blocks: [
